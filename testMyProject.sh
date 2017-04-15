@@ -3,11 +3,6 @@
 # Author: Pavel Hrebicek (xhrebi04)
 # Tests for PRL - 3 Project
 
-# [TEST 1] - [TEST 16] - normal test
-# [TEST 17] - [TEST 18] - not all elements are integers - ERROR
-# [TEST 19] - Matrix cant be multiplied - ERROR
-# [TEST 20] - Bad matrix dimension - ERROR
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YEL='\033[0;33m'
