@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 total=0
 ok=0
 
-mpic++ --prefix /usr/local/share/OpenMPI -o mm mm.cpp -std=c++0x
+chmod u+x test.sh
 
 echo "Starting testing..."
 echo "***********************************************"
@@ -18,14 +18,10 @@ echo "***********************************************"
 for (( i=1; i<=16; i++ ))
 do
 	((total++))
-	mat1=$(head -n1 tests/mat1_$i)
-	mat2=$(head -n1 tests/mat2_$i)
-
 	cp tests/mat1_$i ./mat1
 	cp tests/mat2_$i ./mat2
  
-	cpus=$((mat1*mat2))
-	mpirun --prefix /usr/local/share/OpenMPI -np $cpus mm > tests/test$i.temp
+	./test.sh > tests/test$i.temp
 	diff tests/test$i.temp tests/test$i.out
 	if [ "$?" == "0" ]
 		then
